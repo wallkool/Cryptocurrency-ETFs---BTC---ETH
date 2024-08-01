@@ -108,6 +108,8 @@ Once the data is cleaned and validated, we move on to performing basic analyses 
 2. **Quarterly Analysis:** 
    - Aggregates data to assess the performance over each quarter. This smooths out short-term volatility and provides a clearer picture of medium-term trends.
 
+<details><summary>Click here for the solution</summary>
+
 **SQL**:
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
@@ -178,11 +180,17 @@ LIMIT 5;
 </pre>
 </div>
 
+</details>
+
 ---
 ### Calculation of Key Indicators
 ---
+
 [RSI Analysis](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/SQL/RSI)
 Relative Strength Index (RSI): Measures the speed and change of price movements to identify overbought or oversold conditions.
+
+
+<details><summary>Click here for the solution</summary>
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 
@@ -279,7 +287,9 @@ FROM GBTC;
 
 </pre>
 </div>
-<br>
+<be>
+
+</details>
 
 **Moving Average Convergence Divergence (MACD)**
 Utilizes the difference between two moving averages to identify potential buy or sell signals.
@@ -290,6 +300,9 @@ Grouping and Conditional Analysis:
 Use SQL queries to group data by specific indicators (e.g., RSI, MACD) to identify patterns and validate data integrity. This helps in spotting periods of potential trend reversals and validating the robustness of our dataset.
 
 Link to [ MACD Analysis](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/SQL/MACD)
+
+
+<details><summary>Click here for the solution</summary>
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 
@@ -392,6 +405,8 @@ ORDER BY `date`;
 </pre>
 </div>
 
+</details>
+
 ---
 ##  Pre-Analysis Validity Checks:
 ---
@@ -414,6 +429,8 @@ periods.
 To effectively analyze and visualize the data, we use Python to model price charts and key indicators. The code for this analysis is contained in a Jupyter Notebook titled [Code Test Variable.ipynb - Variable for modeling](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/blob/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/Code%20Test%20Variable.ipynb). This notebook includes:
 
 **Price:** Historical prices of each asset. (Note: To visualize the price or volume of all assets in a single chart, we use a logarithmic scale. This is essential due to the significant discrepancies in prices and volumes among different assets.)
+
+**<details><summary>Click here for details</summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -471,6 +488,8 @@ plt.show()
 </div>
 <br>
 
+</details>
+
 **For Example:**
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -509,6 +528,9 @@ plt.show()
 **RSI (Relative Strength Index):** 
 
 A momentum oscillator that measures the speed and change of price movements.
+
+
+**<details><summary>Click here for details</summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -564,7 +586,9 @@ fig.show()
 
 </pre>
 </div>
-<br>
+<be>
+
+</details>
 
 **For Example:**
 
@@ -573,6 +597,8 @@ fig.show()
 **MACD (Moving Average Convergence Divergence):**
 
 A trend-following momentum indicator that shows the relationship between two moving averages of an asset's price.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -631,7 +657,9 @@ for sheet_name in selected_sheets:
 
 </pre>
 </div>
-<br>
+<be>
+
+</details>
 
 **For Example:**
 
@@ -642,6 +670,8 @@ for sheet_name in selected_sheets:
 **Stock RSI:** 
 
 An oscillator that measures the level of the RSI relative to its range over a set period.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -699,6 +729,8 @@ for selected_sheets, start_date, end_date in zip(selected_sheets, start_dates, e
 </div>
 <br>
 
+</details>
+
 **For Example:**
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -751,6 +783,8 @@ Save the new dataset to work [here](https://github.com/wallkool/Cryptocurrency-E
 **Boxplot:**
 
 Boxplots are used to represent the distribution of data points, helping us understand the spread, symmetry, range, and presence of outliers in the dataset.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -823,6 +857,8 @@ for file_name in os.listdir(output_folder):
 </div>
 <br>
 
+</details>
+
 All the boxplot results for each fund based on Volume, Stock RSI, and RSI are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Bloxplot).
 
 **Here are some examples:**
@@ -857,6 +893,8 @@ All the boxplot results for each fund based on Volume, Stock RSI, and RSI are pr
 **Correlation Heatmap:**
 
 Correlation heatmaps help identify the relationships between different variables. For instance, we might observe that Stock RSI and RSI have a strong correlation with price, while MA (Moving Average) might not be as strongly related to price but more so with Stock RSI and volume.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -893,7 +931,10 @@ for file_name in os.listdir(input_folder):
 
 </pre>
 </div>
-<br>
+<be>
+
+</details>
+
 Because the data from Investing is of high quality and requires minimal cleaning, you can proceed to exploratory analysis to prepare for hypotheses and deeper analysis later on.
 
 
@@ -939,6 +980,8 @@ All the Correlation Heatmap results for each fund based on all metric are presen
 **Histogram:**
 
 Histograms of Stock RSI and RSI show the frequency of overbought and oversold conditions throughout jan 12, 2024 up to May 24, 2024.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -995,6 +1038,8 @@ for file_name in os.listdir(output_folder):
 </div>
 <br>
 
+</details>
+
 All the Histogram results for each fund based on RSI and StorckRSI are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Histogram).
 
 
@@ -1041,6 +1086,8 @@ All the Histogram results for each fund based on RSI and StorckRSI are presented
 **Pairplot:**
 
 Pairplots provide a multi-dimensional view of the data, illustrating the relationships between various variables in different formats.
+
+**<details><summary>Click here for details </summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -1090,21 +1137,71 @@ plt.show()
 
 ```
 
+</pre>
+</div>
+<br>
+
+</details>
+
 ---
 
 <img src="https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/blob/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Pairplot%20Matrix/Super_Pairplot_Matrix.png" alt="ETF Project" width="800"/>
 
 ---
 
-</pre>
-</div>
-<br>
+
+
 
 **A little bit irrelevant, so I chose to divide it based on the time of existence. The first group is BTC, ETH, GBTC; the second group is the remaining ones (FACT: GBTC has been around since ETH was born).**
 
 BTW, All the Pairplot results for each fund based on all variables are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Pairplot%20Matrix).
 
 **Just BTC ETH GBTC:**
+**<details><summary>Click here for details </summary>**
+
+```python
+# Tạo một danh sách để lưu trữ tất cả các DataFrame từ các file Excel
+dfs = []
+
+# Danh sách các file Excel tương tác được
+interactive_files = ["BTC_processed.xlsx", "ETH_processed.xlsx", "GBTC_processed.xlsx"]
+
+# Lặp qua từng tên file trong thư mục đầu vào
+for file_name in os.listdir(input_folder):
+    if file_name in interactive_files:  # Chỉ xử lý các file Excel trong danh sách tương tác được
+        # Đường dẫn đầy đủ đến file Excel
+        file_path = os.path.join(input_folder, file_name)
+        
+        # Đọc dữ liệu từ file Excel vào DataFrame
+        df = pd.read_excel(file_path)
+        
+        # Thêm một cột mới để xác định file gốc của mỗi dòng dữ liệu
+        df['File'] = file_name
+        
+        # Thêm DataFrame này vào danh sách
+        dfs.append(df)
+
+# Kiểm tra xem có DataFrame nào trong danh sách không
+if dfs:
+    # Gộp tất cả các DataFrame trong danh sách thành một DataFrame lớn
+    merged_df = pd.concat(dfs, ignore_index=True)
+
+    # Chọn chỉ các cột quan tâm
+    selected_columns = ["Adj Close", "Volume", "MA", "RSI", "Stock RSI"]
+
+    # Sử dụng seaborn để vẽ ma trận pairplot với mỗi file có một màu sắc khác nhau
+    g = sns.pairplot(merged_df, diag_kind='kde', corner=True, height=3.5, aspect=1, vars=selected_columns, hue='File')
+
+    # Đảm bảo tiêu đề ở trên cùng và ở giữa
+    plt.suptitle('Super Pairplot Matrix', y=1.02, fontsize=16)
+
+    # Điều chỉnh khoảng cách giữa các subplot
+    plt.subplots_adjust(top=0.9, hspace=0.4)
+
+
+```
+
+</details>
 
 ---
 
@@ -1115,6 +1212,55 @@ BTW, All the Pairplot results for each fund based on all variables are presented
 **Not much to say here, except for the pair of RSI and Stock RSI, which are kind of positively related to each other. Most other pairs show BTC standing out as the dominant player. However, when it comes to Stock RSI and RSI, ETH seems to have a bit more bounce in its range, so it might just steal the spotlight!**
 
 **Others:**
+
+**<details><summary>Click here for details </summary>**
+
+```python
+
+# Tạo một danh sách để lưu trữ tất cả các DataFrame từ các file Excel
+dfs = []
+
+# Danh sách các file Excel tương tác được
+interactive_files = ["ARKB_processed.xlsx", "BRRR_processed.xlsx", "BTCO_processed.xlsx",
+                     "FBTC_processed.xlsx", "HODL_processed.xlsx", "IBIT_processed.xlsx"]
+
+# Lặp qua từng tên file trong thư mục đầu vào
+for file_name in os.listdir(input_folder):
+    if file_name in interactive_files:  # Chỉ xử lý các file Excel trong danh sách tương tác được
+        # Đường dẫn đầy đủ đến file Excel
+        file_path = os.path.join(input_folder, file_name)
+        
+        # Đọc dữ liệu từ file Excel vào DataFrame
+        df = pd.read_excel(file_path)
+        
+        # Thêm một cột mới để xác định file gốc của mỗi dòng dữ liệu
+        df['File'] = file_name
+        
+        # Thêm DataFrame này vào danh sách
+        dfs.append(df)
+
+# Kiểm tra xem có DataFrame nào trong danh sách không
+if dfs:
+    # Gộp tất cả các DataFrame trong danh sách thành một DataFrame lớn
+    merged_df = pd.concat(dfs, ignore_index=True)
+
+    # Chọn chỉ các cột quan tâm
+    selected_columns = ["Adj Close", "Volume", "MA", "RSI", "Stock RSI"]
+
+    # Sử dụng seaborn để vẽ ma trận pairplot với mỗi file có một màu sắc khác nhau
+    g = sns.pairplot(merged_df, diag_kind='kde', corner=True, height=3.5, aspect=1, vars=selected_columns, hue='File')
+
+    # Đảm bảo tiêu đề ở trên cùng và ở giữa
+    plt.suptitle('Super Pairplot Matrix Small ETFBTC', y=1.02, fontsize=16)
+
+    # Điều chỉnh khoảng cách giữa các subplot
+    plt.subplots_adjust(top=0.9, hspace=0.4)
+
+```
+
+</details>
+
+
 
 ---
 
@@ -1152,6 +1298,8 @@ The Efficient Frontier theory, introduced by Nobel Laureate Harry Markowitz in 1
 - Standard deviation (annualized) represents the risk metric.
 
 The efficient frontier graphically represents portfolios that maximize returns for a given level of risk. Ideally, investors seek portfolios with high returns and low standard deviation. The key to achieving this is diversification, as less synchronized securities (lower covariance) reduce the overall portfolio risk.
+
+**<details><summary>Click here for details </summary>**
 
 ---
 
@@ -1309,6 +1457,8 @@ print(optimal_weights_df)
 
 ---
 
+</details>
+
 **Result: [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/Efficient%20Frontier/Result)**
 
 **Optimal Portfolio Determination:**
@@ -1338,6 +1488,8 @@ The content below serves as a foundation for creating an effective trading bot. 
 The auto trading bot can help traders remain consistent in their strategies, allowing them to focus on analyzing market conditions and making informed decisions based on the signals provided. Ultimately, while the bot can assist in creating a more structured trading environment, it should be viewed as a complement to a trader's skills and strategies, rather than a substitute for them.
 
 **For example:**
+
+**<details><summary>Click here for details </summary>**
 
 ---
 
@@ -1384,6 +1536,8 @@ plt.savefig(image_save_path)
 plt.show()
 
 ```
+</details>
+
 The results are stored in the "Conclusion" folder. The returns for each asset are as follows:
 
 **[Result of the example](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/Conclusion).**
