@@ -413,13 +413,92 @@ ORDER BY `date`;
 Before delving into deeper analysis using Python, we conduct several validity checks to ensure the reliability of our data and preliminary indicators:
 
 ### 1.  Data Range Checks:
-Verify that the date ranges for each asset match the expected periods.
-Confirm that the numerical values are within realistic bounds and there are no outliers
-due to data entry errors.
+Verify that the date ranges for each asset match the expected periods. (2024-01-12, 2024-05-24)
+
+Confirm that the numerical values are within realistic bounds and there are no outliers due to data entry errors.
+
 ### 2.  Indicator Validation:
 Check the calculated RSI, MACD, and Signal values for logical consistency.
-Ensure that the indicators align with known market conditions during the corresponding
-periods.
+
+Ensure that the indicators align with known market conditions during the corresponding periods.
+
+Delete the NaN of the new dataset after calculation and save the new dataset in csv and xlsx.
+
+<details><summary>Click here for details</summary>
+
+```python
+
+import pandas as pd
+output_folder = r'C:\Users\ADMIN\Project\ETF_Predict_After_ETF_Project\Python\Code and Chart\New Table'
+
+# Khoảng thời gian của từng quỹ
+quy_dates = {
+    "ARKB": ("2024-01-12", "2024-05-24"),
+    "BRRR": ("2024-01-12", "2024-05-24"),
+    "IBIT": ("2024-01-12", "2024-05-24"),
+    "BTCO": ("2024-01-12", "2024-05-24"),
+    "BTC": ("2024-01-12", "2024-05-24"),
+    "ETH": ("2024-01-12", "2024-05-24"),
+    "FBTC": ("2024-01-12", "2024-05-24"),
+    "HODL": ("2024-01-12", "2024-05-24"),
+    "GBTC": ("2024-01-12", "2024-05-24")
+}
+
+# Lặp qua từng quỹ và tính toán MA, RSI và Stock RSI
+for sheet_name, (start_date, end_date) in quy_dates.items():
+    # Đọc dữ liệu của quỹ hiện tại vào DataFrame
+    df = pd.read_excel(excel_file, sheet_name=sheet_name)
+    
+    # Chọn dữ liệu chỉ trong khoảng thời gian của mỗi quỹ
+    df = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
+    
+    # Tính toán MA (Moving Average) với window là 50 ngày
+    ma = df['Close'].rolling(window=50).mean()
+    
+    # Tính toán RSI (Relative Strength Index)
+    delta = df['Close'].diff()
+    gain = delta.mask(delta < 0, 0)
+    loss = -delta.mask(delta > 0, 0)
+    avg_gain = gain.rolling(window=14).mean()
+    avg_loss = loss.rolling(window=14).mean()
+    rs = avg_gain / avg_loss
+    rsi = 100 - (100 / (1 + rs))
+    
+    # Tính toán Stock RSI
+    rsi_stoch = (rsi - rsi.rolling(window=14).min()) / (rsi.rolling(window=14).max() - rsi.rolling(window=14).min())
+    
+    # Thêm cột MA, RSI và Stock RSI vào DataFrame
+    df['MA'] = ma
+    df['RSI'] = rsi
+    df['Stock RSI'] = rsi_stoch
+    
+    # In ra và kiểm tra DataFrame sau khi thêm các cột MA, RSI và Stock RSI
+    print(f"DataFrame for {sheet_name} with MA, RSI, and Stock RSI columns:")
+    print(df)
+    print("\n")
+
+        # Lưu DataFrame vào file Excel và CSV
+    excel_output_path = f"{output_folder}\\{sheet_name}_processed.xlsx"
+    csv_output_path = f"{output_folder}\\{sheet_name}_processed.csv"
+    df.to_excel(excel_output_path, index=False)
+    df.to_csv(csv_output_path, index=False)
+
+   # Loại bỏ tất cả các dòng có giá trị NaN
+    df = df.dropna(how='any')
+    
+    # In ra và kiểm tra DataFrame sau khi loại bỏ NaN và thêm các cột MA, RSI và Stock RSI
+    print(f"DataFrame for {sheet_name} with MA, RSI, and Stock RSI columns (NaN rows removed):")
+    print(df)
+    print("\n")
+
+        # Lưu DataFrame vào file Excel và CSV
+    excel_output_path = f"{output_folder}\\{sheet_name}_processed.xlsx"
+    csv_output_path = f"{output_folder}\\{sheet_name}_processed.csv"
+    df.to_excel(excel_output_path, index=False)
+    df.to_csv(csv_output_path, index=False)
+
+```
+</details>
 
 ---
 # 3. Data Analysis
