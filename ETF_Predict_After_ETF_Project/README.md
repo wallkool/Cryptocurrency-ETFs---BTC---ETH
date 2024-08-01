@@ -490,7 +490,8 @@ plt.show()
 
 </details>
 
-**For Example:**
+**<details><summary>For Example:</summary>**
+
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
 
@@ -524,6 +525,7 @@ plt.show()
 </div>
 <br>
 
+</details>
 
 **RSI (Relative Strength Index):** 
 
@@ -731,7 +733,8 @@ for selected_sheets, start_date, end_date in zip(selected_sheets, start_dates, e
 
 </details>
 
-**For Example:**
+**<details><summary>For Example:</summary>**
+
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
 
@@ -759,6 +762,8 @@ for selected_sheets, start_date, end_date in zip(selected_sheets, start_dates, e
 
 </pre>
 </div>
+</details>
+
 
 ## Exploratory Data Analysis (EDA):
 
@@ -861,7 +866,7 @@ for file_name in os.listdir(output_folder):
 
 All the boxplot results for each fund based on Volume, Stock RSI, and RSI are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Bloxplot).
 
-**Here are some examples:**
+**<details><summary>Here are some examples:</summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -888,6 +893,9 @@ All the boxplot results for each fund based on Volume, Stock RSI, and RSI are pr
 
 </pre>
 </div>
+
+</details>
+
 <br>
 
 **Correlation Heatmap:**
@@ -941,7 +949,7 @@ Because the data from Investing is of high quality and requires minimal cleaning
 
 All the Correlation Heatmap results for each fund based on all metric are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Relation%20Heatmap).
 
-**Here are some examples:**
+**<details><summary>Here are some examples:</summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -967,6 +975,9 @@ All the Correlation Heatmap results for each fund based on all metric are presen
 
 </pre>
 </div>
+
+</details>
+
 <br>
 
 
@@ -1043,7 +1054,7 @@ for file_name in os.listdir(output_folder):
 All the Histogram results for each fund based on RSI and StorckRSI are presented [here](https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/tree/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Histogram).
 
 
-**Here are some examples:**
+**<details><summary>Here are some examples:</summary>**
 
 <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
 <pre>
@@ -1068,6 +1079,9 @@ All the Histogram results for each fund based on RSI and StorckRSI are presented
 
 </pre>
 </div>
+
+</details>
+
 <br>
 
 
@@ -1148,7 +1162,6 @@ plt.show()
 <img src="https://github.com/wallkool/Cryptocurrency-ETFs---BTC---ETH/blob/master/ETF_Predict_After_ETF_Project/Python/Code%20and%20Chart/EDA/Pairplot%20Matrix/Super_Pairplot_Matrix.png" alt="ETF Project" width="800"/>
 
 ---
-
 
 
 
